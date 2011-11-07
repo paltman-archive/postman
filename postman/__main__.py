@@ -6,14 +6,14 @@ import boto
 
 from postman import __version__
 
-legal_headers = [ 'Accept-Language', 'Bcc', 'Cc', 'Comments', 'Content-Type', 
-    'Content-Transfer-Encoding', 'Content-ID', 'Content-Description', 
-    'Content-Disposition', 'Content-Language', 'Date', 'DKIM-Signature',
-    'DomainKey-Signature', 'From', 'In-Reply-To', 'Keywords', 'List-Archive',
-    'List-Help', 'List-Id', 'List-Owner', 'List-Post', 'List-Subscribe', 
-    'List-Unsubscribe', 'Message-Id', 'MIME-Version', 'Received', 'References',
-    'Reply-To', 'Return-Path', 'Sender', 'Subject', 'Thread-Index', 
-    'Thread-Topic', 'To', 'User-Agent' ]
+legal_headers = [ "Accept-Language", "Bcc", "Cc", "Comments", "Content-Type", 
+    "Content-Transfer-Encoding", "Content-ID", "Content-Description", 
+    "Content-Disposition", "Content-Language", "Date", "DKIM-Signature",
+    "DomainKey-Signature From", "In-Reply-To", "Keywords", "List-Archive",
+    "List-Help", "List-Id", "List-Owner", "List-Post", "List-Subscribe", 
+    "List-Unsubscribe", "Message-Id", "MIME-Version", "Received", "References",
+    "Reply-To", "Return-Path", "Sender", "Subject", "Thread-Index", 
+    "Thread-Topic", "To", "User-Agent" ]
 
 def out(msg, args):
     if args.verbose:
@@ -21,11 +21,12 @@ def out(msg, args):
         sys.stdout.flush()
 
 def sanitize(args, msg):
-    ''' Transform any headers SES disallows in to X-Headers.
-
+    """
+    Transform any headers SES disallows in to X-Headers.
+    
     Sanitize method adapted from this Perl snippet:
     http://www.evanhoffman.com/evan/2011/05/16/amazon-ses-illegal-header-errors/
-    '''
+    """
     cleanmsg = ""
     in_header = True
 
