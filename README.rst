@@ -31,7 +31,7 @@ Usage
 Commands
 ========
 
-``poastman`` has 6 different commands, in line with the various API calls available
+``postman`` has 6 different commands, in line with the various API calls available
 for Amazon SES.
 
 
